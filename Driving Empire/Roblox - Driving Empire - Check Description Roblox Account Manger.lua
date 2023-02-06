@@ -15,10 +15,7 @@ function robloxaccountmanager_check()
     name = "Name: " .. game.Players.LocalPlayer.DisplayName .. "\n"
     money = "Money: " .. Format_Number(game.Players.LocalPlayer.leaderstats.Cash.Value, 1) .. ' / ' .. MyAccount:GetAlias() .. "\n"
     bounty = "Bounty: " .. Format_Number(game.Players.LocalPlayer.leaderstats.Bounty.Value, 1) .. "\n"
-    hour = os.date("!*t")["hour"]
-    min = os.date("!*t")["min"]
-    sec = os.date("!*t")["sec"]
-    time = 'Last:  '..hour..':'..min..':'..sec..':'.."\n"
+    time = 'Last:  '..os.date( "%H:%M", os.time() + 8 * 60 * 60 ).."\n"
 end
 
 local abbreviations = {"", "K", "M", "B", "T", "Qa", "Qi", "Sx", "Sp"}
