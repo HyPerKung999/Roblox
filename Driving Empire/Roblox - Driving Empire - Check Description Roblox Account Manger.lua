@@ -15,7 +15,6 @@ function robloxaccountmanager_check()
     name = "Name: " .. game.Players.LocalPlayer.DisplayName .. "\n"
     money = "Money: " .. Format_Number(game.Players.LocalPlayer.leaderstats.Cash.Value, 1) .. ' / ' .. MyAccount:GetAlias() .. "\n"
     bounty = "Bounty: " .. Format_Number(game.Players.LocalPlayer.leaderstats.Bounty.Value, 1) .. "\n"
-    
     hour = os.date("!*t")["hour"]
     min = os.date("!*t")["min"]
     sec = os.date("!*t")["sec"]
@@ -28,7 +27,7 @@ function Format_Number(value, idp)
     local ex = math.floor(math.log(math.max(1, math.abs(value)), 1000))
     local abbrevs = abbreviations[1 + ex] or ("e+" .. ex)
     local normal = math.floor(value * ((10 ^ idp) / (1000 ^ ex))) / (10 ^ idp)
-    
+
     return ("%." .. idp .. "f%s"):format(normal, abbrevs)
 end
 ------------------------------------Check
