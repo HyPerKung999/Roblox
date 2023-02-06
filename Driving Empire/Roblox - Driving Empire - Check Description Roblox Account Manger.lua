@@ -38,13 +38,13 @@ spawn(function()
             if getgenv().kamizshop_drivingempire["Set Description Account Manager"] and not getgenv().kamizshop_drivingempire.repeat_set then
                 if MyAccount then
                     robloxaccountmanager_check()
-                    MyAccount:SetDescription(name .. money .. bounty)
+                    MyAccount:SetDescription(name .. money .. bounty..time)
                     break
                 end
             elseif getgenv().kamizshop_drivingempire["Set Description Account Manager"] and getgenv().kamizshop_drivingempire.repeat_set then
                 if MyAccount then
                     robloxaccountmanager_check()
-                    MyAccount:SetDescription(name .. money .. bounty)
+                    MyAccount:SetDescription(name .. money .. bounty..time)
                     wait(getgenv().kamizshop_drivingempire.delay_set)
                 end
             end
