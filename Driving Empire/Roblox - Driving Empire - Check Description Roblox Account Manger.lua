@@ -1,7 +1,6 @@
 repeat wait() until game.Players; repeat wait() until game.Players.LocalPlayer;
 if not getgenv().spritedev_drivingempire then
     getgenv().spritedev_drivingempire = {
-        ["Language"] = "en", -- [th / en] เลือกภาษา (th = ไทย / en = อังกฤษ) | Select language (th = thai / en = english)
         ["Roblox Account Manager"] = {--การตั้ง Description ในโปรแกรม Roblox Account Manager | Set Description in Roblox Account Manager
             ["Enable"] = true, --เปิดใช้งานหรือไม่ true = เปิด / false = ปิด | Enable? true or false
             ["Loop"] = true, --วนลูปหรือไม่ true = เปิด / false = ปิด | Loop? true or false
@@ -24,9 +23,8 @@ function robloxaccountmanager_check()
     time = "Last: " .. os.date("!%H:%M", os.time() + 7.05 * 60 * 60) .. "\n"
 end
 
-local abbreviations = {"", "K", "M"}
-
 function Format_Number(value, idp)
+    local abbreviations = {"", "K", "M"}
     local ex = math.floor(math.log(math.max(1, math.abs(value)), 1000))
     local abbrevs = abbreviations[1 + ex] or ("e+" .. ex)
     local normal = math.floor(value * ((10 ^ idp) / (1000 ^ ex))) / (10 ^ idp)
