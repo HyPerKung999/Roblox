@@ -4,8 +4,8 @@ if not getgenv().spritedev_drivingempire then
         ["Language"] = "en", -- [th / en] เลือกภาษา (th = ไทย / en = อังกฤษ) | Select language (th = thai / en = english)
         ["Roblox Account Manager"] = {--การตั้ง Description ในโปรแกรม Roblox Account Manager | Set Description in Roblox Account Manager
             ["Enable"] = true, --เปิดใช้งานหรือไม่ true = เปิด / false = ปิด | Enable? true or false
-            ["Loop"] = false, --วนลูปหรือไม่ true = เปิด / false = ปิด | Loop? true or false
-            ["Delay"] = 20, --ดีเลย์ [แนะนำ 10วิ-20วิ] (วินาที) | Delay [recommend 10s-20s] (Sec)
+            ["Loop"] = true, --วนลูปหรือไม่ true = เปิด / false = ปิด | Loop? true or false
+            ["Delay"] = 10, --ดีเลย์ [แนะนำ 10วิ-20วิ] (วินาที) | Delay [recommend 10s-20s] (Sec)
         },
         ["WebHook"] = {--การแจ้งเตือนผ่าน Discord | Discord Webhook Notification
             ["Enable"] = false, --เปิดใช้งานหรือไม่ true = เปิด / false = ปิด | Enable? true or false
