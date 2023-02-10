@@ -10,6 +10,7 @@ if game.gameId == 1202096104 then
             local RAMAccount = loadstring(game:HttpGet "https://raw.githubusercontent.com/ic3w0lf22/Roblox-Account-Manager/master/RAMAccount.lua")()
             local MyAccount = RAMAccount.new(game:GetService "Players".LocalPlayer.Name)
             local Script_Version = "1.0"
+            local Money_Per_Sec
             
             function Check_Data_Roblox_Account_Manager()
                 name = "Name: " .. game.Players.LocalPlayer.DisplayName .. "\n"
@@ -73,12 +74,11 @@ if game.gameId == 1202096104 then
                 })
             end
             
-
-
+            
+            
             --------------------------------------------------------------------------------------------
             ----------------------------------------- SETTINGS -----------------------------------------
             --------------------------------------------------------------------------------------------
-
             if not _G.SPRITEHUB_DRIVINGEMPIRE then
                 _G.SPRITEHUB_DRIVINGEMPIRE = {
                     ["Discord"] = false, --เข้า Discord อัตโนมัติ | Auto Join Discord
@@ -267,9 +267,14 @@ if game.gameId == 1202096104 then
                     Wait(10)
                 end
             end)
-
+            
             spawn(function()
                 while task.wait() do
+                    local Money_1 = game.Players.LocalPlayer.leaderstats.Cash.Value
+                    wait(5)
+                    local Money_2 = game.Players.LocalPlayer.leaderstats.Cash.Value
+                    Money_Per_Sec = (Money_1 - Money_2) / 5
+                    
                     if _G.SPRITEHUB_DRIVINGEMPIRE["WebHook"]["Enable"] then
                         local Http_Webhook_Check
                         if syn then
@@ -299,7 +304,7 @@ if game.gameId == 1202096104 then
                                         ["fields"] = {
                                             {
                                                 ["name"] = "Money",
-                                                ["value"] = Format_Number(game.Players.LocalPlayer.leaderstats.Cash.Value),
+                                                ["value"] = Format_Number(game.Players.LocalPlayer.leaderstats.Cash.Value).." - ("..Money_Per_Sec.. " per second)",
                                                 ['inline'] = true
                                             },
                                             {
@@ -310,6 +315,21 @@ if game.gameId == 1202096104 then
                                             {
                                                 ["name"] = "Bounty",
                                                 ["value"] = Format_Number(game.Players.LocalPlayer.leaderstats.Miles.Value),
+                                                ['inline'] = true
+                                            },
+                                            {
+                                                ["name"] = "Money",
+                                                ["value"] = game.Players.LocalPlayer.leaderstats.Cash.Value.." - ("..Money_Per_Sec.. " per second)",
+                                                ['inline'] = true
+                                            },
+                                            {
+                                                ["name"] = "Bounty",
+                                                ["value"] = game.Players.LocalPlayer.leaderstats.Bounty.Value,
+                                                ['inline'] = true
+                                            },
+                                            {
+                                                ["name"] = "Bounty",
+                                                ["value"] = game.Players.LocalPlayer.leaderstats.Miles.Value,
                                                 ['inline'] = true
                                             },
                                             {
