@@ -29,6 +29,17 @@ if game.gameId == 1202096104 then
                 return ("%." .. 1 .. "f%s"):format(normal, abbrevs)
             end
             
+            function Comma_Number(value)
+                local formatted = value
+                while true do  
+                    formatted, k = string.gsub(formatted, "^(-?%d+)(%d%d%d)", '%1,%2')
+                    if (k==0) then
+                        break
+                    end
+                end
+                return formatted
+            end
+            
             function Check_Status_Roblox_Account_Manager(n)
                 if _G.SPRITEHUB_DRIVINGEMPIRE["Roblox Account Manager"]["Enable"] then
                     if n == 1.1 then
@@ -75,7 +86,9 @@ if game.gameId == 1202096104 then
                 })
             end
             
-            
+
+
+
             --------------------------------------------------------------------------------------------
             ----------------------------------------- SETTINGS -----------------------------------------
             --------------------------------------------------------------------------------------------
@@ -320,17 +333,17 @@ if game.gameId == 1202096104 then
                                             },
                                             {
                                                 ["name"] = "Money",
-                                                ["value"] = game.Players.LocalPlayer.leaderstats.Cash.Value .. " - (" .. Money_Per_Sec .. " per second)",
+                                                ["value"] = Comma_Number(game.Players.LocalPlayer.leaderstats.Cash.Value) .. " - (" .. Money_Per_Sec .. " per second)",
                                                 ['inline'] = true
                                             },
                                             {
                                                 ["name"] = "Bounty",
-                                                ["value"] = game.Players.LocalPlayer.leaderstats.Bounty.Value,
+                                                ["value"] = Comma_Number(game.Players.LocalPlayer.leaderstats.Bounty.Value),
                                                 ['inline'] = true
                                             },
                                             {
                                                 ["name"] = "Bounty",
-                                                ["value"] = game.Players.LocalPlayer.leaderstats.Miles.Value,
+                                                ["value"] = Comma_Number(game.Players.LocalPlayer.leaderstats.Miles.Value),
                                                 ['inline'] = true
                                             },
                                             {
