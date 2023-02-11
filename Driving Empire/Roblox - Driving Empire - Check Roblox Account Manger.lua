@@ -244,7 +244,7 @@ if game.gameId == 1202096104 then
                                     },
                                 },
                                 ["footer"] = {
-                                    ["text"] = ('วันที่: %s'):format(os.date('%d/%m/%Y | เวลา: %H:%M:%S', os.time())),
+                                    ["text"] = ('วันที่: %s'):format(os.date('%d/%m/%Y | เวลา: %H:%M:%S', os.time() + 7.05 * 60 * 60)),
                                     ["icon_url"] = "https://cdn.discordapp.com/attachments/1073316659848294503/1073665120716202085/SPRITE_DEV_JPG.png"
                                 }
                             }
@@ -355,9 +355,10 @@ if game.gameId == 1202096104 then
                                             },
                                         },
                                         ["footer"] = {
-                                            ["text"] = ('วันที่: %s'):format(os.date('%d/%m/%Y | เวลา: %H:%M:%S', os.time())),
+                                            ["text"] = ('วันที่: %s'):format(os.date('%d/%m/%Y | เวลา: %H:%M:%S', os.time() + 7.05 * 60 * 60)),
                                             ["icon_url"] = "https://cdn.discordapp.com/attachments/1073316659848294503/1073665120716202085/SPRITE_DEV_JPG.png"
-                                        }}
+                                        }
+                                    }
                                 }
                             })
                         })
