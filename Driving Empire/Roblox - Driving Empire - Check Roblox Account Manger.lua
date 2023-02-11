@@ -274,7 +274,7 @@ if game.gameId == 1202096104 then
                     local Money_1 = game.Players.LocalPlayer.leaderstats.Cash.Value
                     wait(5)
                     local Money_2 = game.Players.LocalPlayer.leaderstats.Cash.Value
-                    Money_Per_Sec = (Money_1 - Money_2) / 5
+                    Money_Per_Sec = (Money_2 - Money_1) / 5
                     
                     if _G.SPRITEHUB_DRIVINGEMPIRE["WebHook"]["Enable"] then
                         local Http_Webhook_Check
