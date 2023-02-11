@@ -9,8 +9,7 @@ if game.gameId == 1202096104 then
         pcall(function()
             local RAMAccount = loadstring(game:HttpGet "https://raw.githubusercontent.com/ic3w0lf22/Roblox-Account-Manager/master/RAMAccount.lua")()
             local MyAccount = RAMAccount.new(game:GetService "Players".LocalPlayer.Name)
-            local Script_Version = "1.0"
-            local Money_Per_Sec
+            local Script_Version = "1.0.6"
             local Webhook_Api = "https://discord.com/api/webhooks/" .. "1073750843066695720/QRz9cTl3lp6n2uogThVCZl3jHeG8U01eggsByEjftXwZDtCNV9pIwuiPe9WVKmwi-KjE" --Channel Id / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
             --local Webhook_Api = "123456789/xxxxxxx" --Channel Id / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
             function Check_Data_Roblox_Account_Manager()
@@ -278,11 +277,6 @@ if game.gameId == 1202096104 then
             
             spawn(function()
                 while task.wait() do
-                    local Money_1 = game.Players.LocalPlayer.leaderstats.Cash.Value
-                    wait(5)
-                    local Money_2 = game.Players.LocalPlayer.leaderstats.Cash.Value
-                    Money_Per_Sec = (Money_2 - Money_1) / 5
-                    
                     if _G.SPRITEHUB_DRIVINGEMPIRE["WebHook"]["Enable"] then
                         local Http_Webhook_Check
                         if syn then
@@ -312,7 +306,7 @@ if game.gameId == 1202096104 then
                                         ["fields"] = {
                                             {
                                                 ["name"] = "Money",
-                                                ["value"] = Format_Number(game.Players.LocalPlayer.leaderstats.Cash.Value) .. " - (" .. Money_Per_Sec .. " per second)",
+                                                ["value"] = Format_Number(game.Players.LocalPlayer.leaderstats.Cash.Value),
                                                 ['inline'] = true
                                             },
                                             {
@@ -327,7 +321,7 @@ if game.gameId == 1202096104 then
                                             },
                                             {
                                                 ["name"] = "Money",
-                                                ["value"] = Comma_Number(game.Players.LocalPlayer.leaderstats.Cash.Value) .. " - (" .. Money_Per_Sec .. " per second)",
+                                                ["value"] = Comma_Number(game.Players.LocalPlayer.leaderstats.Cash.Value),
                                                 ['inline'] = true
                                             },
                                             {
