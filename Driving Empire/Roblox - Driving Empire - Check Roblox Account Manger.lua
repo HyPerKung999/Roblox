@@ -259,18 +259,12 @@ if game.gameId == 1202096104 then
                 while task.wait() do
                     if _G.SPRITEHUB_DRIVINGEMPIRE["Roblox Account Manager"]["Enable"] and not _G.SPRITEHUB_DRIVINGEMPIRE["Roblox Account Manager"]["Loop"] then
                         if MyAccount then
-                            if not MyAccount:GetAlias() or MyAccount:GetAlias() == nil or MyAccount:GetAlias() == "" or MyAccount:GetAlias() == " " then
-                                MyAccount:SetAlias(" - ")
-                            end
                             Check_Data_Roblox_Account_Manager()
                             MyAccount:SetDescription(name .. money .. bounty .. miles .. time)
                             break
                         end
                     elseif _G.SPRITEHUB_DRIVINGEMPIRE["Roblox Account Manager"]["Enable"] and _G.SPRITEHUB_DRIVINGEMPIRE["Roblox Account Manager"]["Loop"] then
                         if MyAccount then
-                            if not MyAccount:GetAlias() or MyAccount:GetAlias() == nil or MyAccount:GetAlias() == "" or MyAccount:GetAlias() == " " then
-                                MyAccount:SetAlias(" - ")
-                            end
                             Check_Data_Roblox_Account_Manager()
                             MyAccount:SetDescription(name .. money .. bounty .. miles .. time)
                             Wait(_G.SPRITEHUB_DRIVINGEMPIRE["Roblox Account Manager"]["Delay"] or 10)
