@@ -365,6 +365,7 @@ if game.gameId == 1202096104 then
                             })
                         })
                     end
+                    
                     wait(30)
                 end
             end)
