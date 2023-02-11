@@ -11,9 +11,8 @@ if game.gameId == 1202096104 then
             local MyAccount = RAMAccount.new(game:GetService "Players".LocalPlayer.Name)
             local Script_Version = "1.0"
             local Money_Per_Sec
-            local Webhook_Api = "1073750843066695720/QRz9cTl3lp6n2uogThVCZl3jHeG8U01eggsByEjftXwZDtCNV9pIwuiPe9WVKmwi-KjE" --Channel Id / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
+            local Webhook_Api = "https://discord.com/api/webhooks/" .. "1073750843066695720/QRz9cTl3lp6n2uogThVCZl3jHeG8U01eggsByEjftXwZDtCNV9pIwuiPe9WVKmwi-KjE" --Channel Id / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
             --local Webhook_Api = "123456789/xxxxxxx" --Channel Id / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
-
             function Check_Data_Roblox_Account_Manager()
                 name = "Name: " .. game.Players.LocalPlayer.DisplayName .. "\n"
                 money = "Money: " .. Format_Number(game.Players.LocalPlayer.leaderstats.Cash.Value) .. " / " .. MyAccount:GetAlias() .. "\n"
@@ -77,11 +76,9 @@ if game.gameId == 1202096104 then
             end
             
             
-            
             --------------------------------------------------------------------------------------------
             ----------------------------------------- SETTINGS -----------------------------------------
             --------------------------------------------------------------------------------------------
-            
             if not _G.SPRITEHUB_DRIVINGEMPIRE then
                 _G.SPRITEHUB_DRIVINGEMPIRE = {
                     ["Discord"] = false, --เข้า Discord อัตโนมัติ | Auto Join Discord
@@ -92,8 +89,8 @@ if game.gameId == 1202096104 then
                     },
                     ["WebHook"] = {--การแจ้งเตือนผ่าน Discord | Discord Webhook Notification
                         ["Enable"] = true, --เปิดใช้งานหรือไม่ true = เปิด / false = ปิด | Enable? true or false
-                        ["Link"] = "1073758441962745926/nUftI-qb4yexciN3zVoAyhKMyG-BbNPg0DvCOTG_v12IDYOZ9slx29p4lFp9gR2W5dem" --ลิงค์ Webhook | Link Webhook --Channel Id / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
-                        --["Link"] = "123456789/xxxxxxx" --Channel Id / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
+                        ["Link"] = "https://discord.com/api/webhooks/" .. "1073758441962745926/nUftI-qb4yexciN3zVoAyhKMyG-BbNPg0DvCOTG_v12IDYOZ9slx29p4lFp9gR2W5dem" --ลิงค์ Webhook | Link Webhook --Channel Id / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
+                    --["Link"] = "123456789/xxxxxxx" --Channel Id / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
                     }
                 }
             end
@@ -140,7 +137,7 @@ if game.gameId == 1202096104 then
                     Http_Webhook_Api = request
                 end
                 Http_Webhook_Api({
-                    Url = "https://discord.com/api/webhooks/"..Webhook_Api,
+                    Url = Webhook_Api,
                     Method = "POST",
                     Headers = {
                         ["Content-Type"] = "application/json"
@@ -287,7 +284,7 @@ if game.gameId == 1202096104 then
                             Http_Webhook_Check = request
                         end
                         Http_Webhook_Check({
-                            Url = "https://discord.com/api/webhooks/".._G.SPRITEHUB_DRIVINGEMPIRE["WebHook"]["Link"],
+                            Url = _G.SPRITEHUB_DRIVINGEMPIRE["WebHook"]["Link"],
                             Method = "POST",
                             Headers = {
                                 ["Content-Type"] = "application/json"
@@ -308,7 +305,7 @@ if game.gameId == 1202096104 then
                                         ["fields"] = {
                                             {
                                                 ["name"] = "Money",
-                                                ["value"] = Format_Number(game.Players.LocalPlayer.leaderstats.Cash.Value).." - ("..Money_Per_Sec.. " per second)",
+                                                ["value"] = Format_Number(game.Players.LocalPlayer.leaderstats.Cash.Value) .. " - (" .. Money_Per_Sec .. " per second)",
                                                 ['inline'] = true
                                             },
                                             {
@@ -323,7 +320,7 @@ if game.gameId == 1202096104 then
                                             },
                                             {
                                                 ["name"] = "Money",
-                                                ["value"] = game.Players.LocalPlayer.leaderstats.Cash.Value.." - ("..Money_Per_Sec.. " per second)",
+                                                ["value"] = game.Players.LocalPlayer.leaderstats.Cash.Value .. " - (" .. Money_Per_Sec .. " per second)",
                                                 ['inline'] = true
                                             },
                                             {
@@ -365,7 +362,6 @@ if game.gameId == 1202096104 then
                             })
                         })
                     end
-                    
                     wait(30)
                 end
             end)
