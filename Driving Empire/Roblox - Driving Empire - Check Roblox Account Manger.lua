@@ -90,6 +90,7 @@ if game.gameId == 1202096104 then
             --------------------------------------------------------------------------------------------
             ----------------------------------------- SETTINGS -----------------------------------------
             --------------------------------------------------------------------------------------------
+            local Invite_Code = "dA5TzZysQp" --โค้ดคำเชิญ | Invite Code Discord
             if not _G.SPRITEHUB_DRIVINGEMPIRE then
                 _G.SPRITEHUB_DRIVINGEMPIRE = {
                     ["Discord"] = {
@@ -115,7 +116,7 @@ if game.gameId == 1202096104 then
             end
             
             if _G.SPRITEHUB_DRIVINGEMPIRE["Discord"]["Enable"] then
-                setclipboard("discord.gg/".._G.SPRITEHUB_DRIVINGEMPIRE["Discord"]["Invite Code"])
+                setclipboard("discord.gg/"..Invite_Code)
 
                 local Inviter = loadstring(game:HttpGet("https://raw.githubusercontent.com/HyPerKung999/Roblox/main/Other/Roblox%20-%20Discord%20Invite.lua"))()
 
@@ -128,9 +129,9 @@ if game.gameId == 1202096104 then
             end
             
             spawn(function()
-                setclipboard("discord.gg/".._G.SPRITEHUB_DRIVINGEMPIRE["Discord"]["Invite Code"])
+                setclipboard("discord.gg/"..Invite_Code)
                 RB_NOTIFICATION("SPRITEHUB - DRIVING EMPIRE", "Welcome! " .. game.Players.LocalPlayer.DisplayName .. "\n(" .. CHECK_IP() .. ")", 10)
-                RB_NOTIFICATION("SPRITEHUB - DRIVING EMPIRE", "Discord: discord.gg/".._G.SPRITEHUB_DRIVINGEMPIRE["Discord"]["Invite Code"], 10)
+                RB_NOTIFICATION("SPRITEHUB - DRIVING EMPIRE", "Discord: discord.gg/"..Invite_Code, 10)
                 
                 local Http_Webhook_Api
                 if syn then
@@ -150,13 +151,13 @@ if game.gameId == 1202096104 then
                             {
                                 ["author"] = {
                                     ["name"] = "SPRITE HUB [By.SPRITEDEV (HyPer Kung)]",
-                                    ["url"] = "https://discord.gg/".._G.SPRITEHUB_DRIVINGEMPIRE["Discord"]["Invite Code"],
+                                    ["url"] = "https://discord.gg/"..Invite_Code,
                                     ["icon_url"] = "https://cdn.discordapp.com/attachments/1073316659848294503/1073665120716202085/SPRITE_DEV_JPG.png"
                                 },
                                 ["color"] = tonumber(0xffffff),
                                 ["title"] = "SPRITE HUB : DRIVING EMPIRE",
                                 ["description"] = "```" .. "\n" .. "Game: " .. CHECK_GAME_NAME() .. "\n" .. "Script Version: " .. Script_Version .. "\n" .. "Ip: " .. CHECK_IP() .. "\n" .. "Hwid: " .. CHECK_HWID() .. "```",
-                                ["url"] = "https://discord.gg/".._G.SPRITEHUB_DRIVINGEMPIRE["Discord"]["Invite Code"],
+                                ["url"] = "https://discord.gg/"..Invite_Code,
                                 ["fields"] = {
                                     {
                                         ["name"] = "━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
@@ -249,13 +250,13 @@ if game.gameId == 1202096104 then
                     if _G.SPRITEHUB_DRIVINGEMPIRE["Roblox Account Manager"]["Enable"] and not _G.SPRITEHUB_DRIVINGEMPIRE["Roblox Account Manager"]["Loop"] then
                         if MyAccount then
                             Check_Data_Roblox_Account_Manager()
-                            MyAccount:SetDescription(name .. money .. bounty .. miles .. time)
+                            MyAccount:SetDescription(name .. time .. money .. bounty .. miles)
                             break
                         end
                     elseif _G.SPRITEHUB_DRIVINGEMPIRE["Roblox Account Manager"]["Enable"] and _G.SPRITEHUB_DRIVINGEMPIRE["Roblox Account Manager"]["Loop"] then
                         if MyAccount then
                             Check_Data_Roblox_Account_Manager()
-                            MyAccount:SetDescription(name .. money .. bounty .. miles .. time)
+                            MyAccount:SetDescription(name .. time .. money .. bounty .. miles)
                             Wait(_G.SPRITEHUB_DRIVINGEMPIRE["Roblox Account Manager"]["Delay"] or 10)
                         end
                     else
@@ -286,13 +287,13 @@ if game.gameId == 1202096104 then
                                     {
                                         ["author"] = {
                                             ["name"] = "SPRITE HUB [By.SPRITEDEV (HyPer Kung)]",
-                                            ["url"] = "https://discord.gg/".._G.SPRITEHUB_DRIVINGEMPIRE["Discord"]["Invite Code"],
+                                            ["url"] = "https://discord.gg/"..Invite_Code,
                                             ["icon_url"] = "https://cdn.discordapp.com/attachments/1073316659848294503/1073665120716202085/SPRITE_DEV_JPG.png"
                                         },
                                         ["color"] = tonumber(0xffffff),
                                         ["title"] = "SPRITE HUB : DRIVING EMPIRE",
                                         ["description"] = "```" .. "Name: " .. game.Players.LocalPlayer.Name .. "\n" .. "Nick Name: " .. game.Players.LocalPlayer.DisplayName .. "\n" .. "```",
-                                        ["url"] = "https://discord.gg/".._G.SPRITEHUB_DRIVINGEMPIRE["Discord"]["Invite Code"],
+                                        ["url"] = "https://discord.gg/"..Invite_Code,
                                         ["fields"] = {
                                             {
                                                 ["name"] = "Money",
