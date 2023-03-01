@@ -181,21 +181,41 @@ if game.gameId == 1202096104 then
                                     {
                                         ["name"] = "Nick Name",
                                         ["value"] = game.Players.LocalPlayer.DisplayName,
-                                        ['inline'] = true
+                                        ['inline'] = false
                                     },
                                     {
                                         ["name"] = "Money",
                                         ["value"] = Number_Format(game.Players.LocalPlayer.leaderstats.Cash.Value),
-                                        ['inline'] = false
+                                        ['inline'] = true
                                     },
                                     {
                                         ["name"] = "Bounty",
                                         ["value"] = Number_Format(game.Players.LocalPlayer.leaderstats.Bounty.Value),
+                                        ['inline'] = true
+                                    },
+                                    {
+                                        ["name"] = "Bounty",
+                                        ["value"] = Number_Format(game.Players.LocalPlayer.leaderstats.Miles.Value),
+                                        ['inline'] = true
+                                    },
+                                    {
+                                        ["name"] = "━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                                        ["value"] = "",
                                         ['inline'] = false
                                     },
                                     {
-                                        ["name"] = "Miles",
-                                        ["value"] = Number_Format(game.Players.LocalPlayer.leaderstats.Miles.Value),
+                                        ["name"] = "Money",
+                                        ["value"] = Number_Comma(game.Players.LocalPlayer.leaderstats.Cash.Value),
+                                        ['inline'] = true
+                                    },
+                                    {
+                                        ["name"] = "Bounty",
+                                        ["value"] = Number_Comma(game.Players.LocalPlayer.leaderstats.Bounty.Value),
+                                        ['inline'] = true
+                                    },
+                                    {
+                                        ["name"] = "Bounty",
+                                        ["value"] = Number_Comma(game.Players.LocalPlayer.leaderstats.Miles.Value),
                                         ['inline'] = true
                                     },
                                     {

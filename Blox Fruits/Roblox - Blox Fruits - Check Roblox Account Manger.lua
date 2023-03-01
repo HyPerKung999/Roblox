@@ -219,12 +219,12 @@ if game.gameId == 994732206 then
                                     {
                                         ["name"] = "Nick Name",
                                         ["value"] = game.Players.LocalPlayer.DisplayName,
-                                        ['inline'] = true
+                                        ['inline'] = false
                                     },
                                     {
                                         ["name"] = "Level",
                                         ["value"] = Number_Format(game.Players.LocalPlayer.Data.Level.Value),
-                                        ['inline'] = false
+                                        ['inline'] = true
                                     },
                                     {
                                         ["name"] = "Beli",
