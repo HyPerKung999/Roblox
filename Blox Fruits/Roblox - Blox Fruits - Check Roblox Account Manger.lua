@@ -38,7 +38,7 @@ if game.gameId == 994732206 then
             
             function Check_Awake_Fruits()
                 game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.Visible = true
-                task.wait(1)
+                task.wait(0.25)
                 for i, v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.TopContainer.Frame:GetChildren()) do
                     if v:IsA('ImageButton') then
                         if v.Name == 'Template' then
@@ -52,7 +52,7 @@ if game.gameId == 994732206 then
                     awake_list = awake_list .. x .. ", "
                 end
                 spawn(function()
-                    task.wait(1)
+                    task.wait(0.25)
                     game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.Visible = false
                 end)
                 return awake_list
