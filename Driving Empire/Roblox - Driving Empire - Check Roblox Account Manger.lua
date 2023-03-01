@@ -101,7 +101,7 @@ if game.gameId == 1202096104 then
                         ["Loop"] = true, --วนลูปหรือไม่ true = เปิด / false = ปิด | Loop? true or false
                         ["Delay"] = 10, --ดีเลย์ [มากกว่า 10วิ-20วิ] (วินาที) | Delay [more than 10s-20s] (Sec)
                     },
-                    ["WebHook"] = {--การแจ้งเตือนผ่าน Discord | Discord Webhook Notification
+                    ["Webhook"] = {--การแจ้งเตือนผ่าน Discord | Discord Webhook Notification
                         ["Enable"] = true, --เปิดใช้งานหรือไม่ true = เปิด / false = ปิด | Enable? true or false
                         ["Link"] = "https://discord.com/api/webhooks/" .. "1080356587253792840/hVHN_qZ2_SJtg_f_xxRYWqI9gMcPGPVRzAAAlxJ5dMmlGvnFNW1qn-9HRdLOKj7_Z2Wy" --ลิงค์ Webhook | Link Webhook / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
                         --["Link"] = "123456789/xxxxxxx" / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
@@ -267,7 +267,7 @@ if game.gameId == 1202096104 then
             
             spawn(function()
                 while task.wait() do
-                    if _G.SPRITEHUB_DRIVINGEMPIRE["WebHook"]["Enable"] then
+                    if _G.SPRITEHUB_DRIVINGEMPIRE["Webhook"]["Enable"] then
                         local Http_Webhook_Check
                         if syn then
                             Http_Webhook_Check = syn.request
@@ -275,7 +275,7 @@ if game.gameId == 1202096104 then
                             Http_Webhook_Check = request
                         end
                         Http_Webhook_Check({
-                            Url = _G.SPRITEHUB_DRIVINGEMPIRE["WebHook"]["Link"],
+                            Url = _G.SPRITEHUB_DRIVINGEMPIRE["Webhook"]["Link"],
                             Method = "POST",
                             Headers = {
                                 ["Content-Type"] = "application/json"
