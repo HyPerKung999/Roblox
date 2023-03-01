@@ -22,6 +22,25 @@ if game.gameId == 994732206 then
             elseif placeId == 7449423635 then
                 world_check = "3";
             end
+
+            game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.Visible = true
+            task.wait(0.25)
+            for i, v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.TopContainer.Frame:GetChildren()) do
+                if v:IsA('ImageButton') then
+                    if v.Name == 'Template' then
+                        else
+                        table.insert(awake, v.Name)
+                    end
+                end
+            end
+            awake_list = ""
+            for i, x in pairs(awake) do
+                awake_list = awake_list .. x .. ", "
+            end
+            spawn(function()
+                task.wait(0.25)
+                game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.Visible = false
+            end)
             
             function Check_Data_Roblox_Account_Manager()
                 name = "Display Name: " .. game.Players.LocalPlayer.DisplayName .. "\n"
@@ -31,32 +50,11 @@ if game.gameId == 994732206 then
                 beli = "Beli: " .. Number_Format(game.Players.LocalPlayer.Data.Beli.Value) .. "\n"
                 fragments = "Fragments: " .. Number_Format(game.Players.LocalPlayer.Data.Fragments.Value) .. "\n"
                 devilFruit = "Devil Fruit: " .. game.Players.LocalPlayer.Data.DevilFruit.Value .. "\n"
-                awaked = "Awake: " .. Check_Awake_Fruits() .. "\n"
+                awaked = "Awake: " .. awake_list .. "\n"
                 race = "Race: " .. game.Players.LocalPlayer.Data.Race.Value .. "\n"
                 lastspawnpoint = "Last Spawn Point: " .. game.Players.LocalPlayer.Data.LastSpawnPoint.Value
             end
             
-            function Check_Awake_Fruits()
-                game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.Visible = true
-                task.wait(0.25)
-                for i, v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.TopContainer.Frame:GetChildren()) do
-                    if v:IsA('ImageButton') then
-                        if v.Name == 'Template' then
-                            else
-                            table.insert(awake, v.Name)
-                        end
-                    end
-                end
-                awake_list = ""
-                for i, x in pairs(awake) do
-                    awake_list = awake_list .. x .. ", "
-                end
-                spawn(function()
-                    task.wait(0.25)
-                    game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.Visible = false
-                end)
-                return awake_list
-            end
             function Number_Format(value)
                 local abbreviations = {"", "K", "M"}
                 local ex = math.floor(math.log(math.max(1, math.abs(value)), 1000))
