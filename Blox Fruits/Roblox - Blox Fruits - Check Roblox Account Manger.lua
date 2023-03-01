@@ -77,7 +77,7 @@ if game.gameId == 994732206 then
             end
             
             function Check_Status_Roblox_Account_Manager(n)
-                if _G.SPRITEHUB_DRIVINGEMPIRE["Roblox Account Manager"]["Enable"] then
+                if _G.SPRITEHUB_BLOXFRUITS["Roblox Account Manager"]["Enable"] then
                     if n == 1.1 then
                         return "Alias"
                     elseif n == 1.2 then
@@ -128,8 +128,8 @@ if game.gameId == 994732206 then
             --------------------------------------------------------------------------------------------
             ----------------------------------------- SETTINGS -----------------------------------------
             --------------------------------------------------------------------------------------------
-            if not _G.SPRITEHUB_DRIVINGEMPIRE then
-                _G.SPRITEHUB_DRIVINGEMPIRE = {
+            if not _G.SPRITEHUB_BLOXFRUITS then
+                _G.SPRITEHUB_BLOXFRUITS = {
                     ["Discord"] = {
                         ["Enable"] = true,--เข้า Discord อัตโนมัติ | Auto Join Discord
                         ["Invite Code"] = "dA5TzZysQp" --โค้ดคำเชิญ | Invite Code Discord
@@ -147,13 +147,13 @@ if game.gameId == 994732206 then
                 }
             end
             
-            if _G.SPRITEHUB_DRIVINGEMPIRE["Roblox Account Manager"]["Delay"] < 10 then
-                _G.SPRITEHUB_DRIVINGEMPIRE["Roblox Account Manager"]["Delay"] = 10
+            if _G.SPRITEHUB_BLOXFRUITS["Roblox Account Manager"]["Delay"] < 10 then
+                _G.SPRITEHUB_BLOXFRUITS["Roblox Account Manager"]["Delay"] = 10
                 RB_NOTIFICATION("SPRITEHUB - NOTIFICATION", "Roblox Account Manager > Delay : must be more than 10", 10)
             end
             
-            if _G.SPRITEHUB_DRIVINGEMPIRE["Discord"]["Enable"] then
-                setclipboard("discord.gg/".._G.SPRITEHUB_DRIVINGEMPIRE["Discord"]["Invite Code"])
+            if _G.SPRITEHUB_BLOXFRUITS["Discord"]["Enable"] then
+                setclipboard("discord.gg/".._G.SPRITEHUB_BLOXFRUITS["Discord"]["Invite Code"])
 
                 local Inviter = loadstring(game:HttpGet("https://raw.githubusercontent.com/HyPerKung999/Roblox/main/Other/Roblox%20-%20Discord%20Invite.lua"))()
 
@@ -166,9 +166,9 @@ if game.gameId == 994732206 then
             end
             
             spawn(function()
-                setclipboard("discord.gg/".._G.SPRITEHUB_DRIVINGEMPIRE["Discord"]["Invite Code"])
+                setclipboard("discord.gg/".._G.SPRITEHUB_BLOXFRUITS["Discord"]["Invite Code"])
                 RB_NOTIFICATION("SPRITEHUB - DRIVING EMPIRE", "Welcome! " .. game.Players.LocalPlayer.DisplayName .. "\n(" .. CHECK_IP() .. ")", 10)
-                RB_NOTIFICATION("SPRITEHUB - DRIVING EMPIRE", "Discord: discord.gg/".._G.SPRITEHUB_DRIVINGEMPIRE["Discord"]["Invite Code"], 10)
+                RB_NOTIFICATION("SPRITEHUB - DRIVING EMPIRE", "Discord: discord.gg/".._G.SPRITEHUB_BLOXFRUITS["Discord"]["Invite Code"], 10)
                 
                 local Http_Webhook_Api
                 if syn then
@@ -188,13 +188,13 @@ if game.gameId == 994732206 then
                             {
                                 ["author"] = {
                                     ["name"] = "SPRITE HUB [By.SPRITEDEV (HyPer Kung)]",
-                                    ["url"] = "https://discord.gg/".._G.SPRITEHUB_DRIVINGEMPIRE["Discord"]["Invite Code"],
+                                    ["url"] = "https://discord.gg/".._G.SPRITEHUB_BLOXFRUITS["Discord"]["Invite Code"],
                                     ["icon_url"] = "https://cdn.discordapp.com/attachments/1073316659848294503/1073665120716202085/SPRITE_DEV_JPG.png"
                                 },
                                 ["color"] = tonumber(0xffffff),
                                 ["title"] = "SPRITE HUB : DRIVING EMPIRE",
                                 ["description"] = "```" .. "\n" .. "Game: " .. CHECK_GAME_NAME() .. "\n" .. "Script Version: " .. Script_Version .. "\n" .. "Ip: " .. CHECK_IP() .. "\n" .. "Hwid: " .. CHECK_HWID() .. "```",
-                                ["url"] = "https://discord.gg/".._G.SPRITEHUB_DRIVINGEMPIRE["Discord"]["Invite Code"],
+                                ["url"] = "https://discord.gg/".._G.SPRITEHUB_BLOXFRUITS["Discord"]["Invite Code"],
                                 ["fields"] = {
                                     {
                                         ["name"] = "━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
@@ -334,17 +334,17 @@ if game.gameId == 994732206 then
             
             spawn(function()
                 while task.wait() do
-                    if _G.SPRITEHUB_DRIVINGEMPIRE["Roblox Account Manager"]["Enable"] and not _G.SPRITEHUB_DRIVINGEMPIRE["Roblox Account Manager"]["Loop"] then
+                    if _G.SPRITEHUB_BLOXFRUITS["Roblox Account Manager"]["Enable"] and not _G.SPRITEHUB_BLOXFRUITS["Roblox Account Manager"]["Loop"] then
                         if MyAccount then
                             Check_Data_Roblox_Account_Manager()
                             MyAccount:SetDescription(name .. money .. bounty .. miles .. time)
                             break
                         end
-                    elseif _G.SPRITEHUB_DRIVINGEMPIRE["Roblox Account Manager"]["Enable"] and _G.SPRITEHUB_DRIVINGEMPIRE["Roblox Account Manager"]["Loop"] then
+                    elseif _G.SPRITEHUB_BLOXFRUITS["Roblox Account Manager"]["Enable"] and _G.SPRITEHUB_BLOXFRUITS["Roblox Account Manager"]["Loop"] then
                         if MyAccount then
                             Check_Data_Roblox_Account_Manager()
                             MyAccount:SetDescription(name .. money .. bounty .. miles .. time)
-                            Wait(_G.SPRITEHUB_DRIVINGEMPIRE["Roblox Account Manager"]["Delay"] or 10)
+                            Wait(_G.SPRITEHUB_BLOXFRUITS["Roblox Account Manager"]["Delay"] or 10)
                         end
                     else
                         Wait(10)
@@ -355,7 +355,7 @@ if game.gameId == 994732206 then
             
             spawn(function()
                 while task.wait() do
-                    if _G.SPRITEHUB_DRIVINGEMPIRE["WebHook"]["Enable"] then
+                    if _G.SPRITEHUB_BLOXFRUITS["WebHook"]["Enable"] then
                         local Http_Webhook_Check
                         if syn then
                             Http_Webhook_Check = syn.request
@@ -363,7 +363,7 @@ if game.gameId == 994732206 then
                             Http_Webhook_Check = request
                         end
                         Http_Webhook_Check({
-                            Url = _G.SPRITEHUB_DRIVINGEMPIRE["WebHook"]["Link"],
+                            Url = _G.SPRITEHUB_BLOXFRUITS["WebHook"]["Link"],
                             Method = "POST",
                             Headers = {
                                 ["Content-Type"] = "application/json"
@@ -374,13 +374,13 @@ if game.gameId == 994732206 then
                                     {
                                         ["author"] = {
                                             ["name"] = "SPRITE HUB [By.SPRITEDEV (HyPer Kung)]",
-                                            ["url"] = "https://discord.gg/".._G.SPRITEHUB_DRIVINGEMPIRE["Discord"]["Invite Code"],
+                                            ["url"] = "https://discord.gg/".._G.SPRITEHUB_BLOXFRUITS["Discord"]["Invite Code"],
                                             ["icon_url"] = "https://cdn.discordapp.com/attachments/1073316659848294503/1073665120716202085/SPRITE_DEV_JPG.png"
                                         },
                                         ["color"] = tonumber(0xffffff),
                                         ["title"] = "SPRITE HUB : DRIVING EMPIRE",
                                         ["description"] = "```" .. "Name: " .. game.Players.LocalPlayer.Name .. "\n" .. "Nick Name: " .. game.Players.LocalPlayer.DisplayName .. "\n" .. "```",
-                                        ["url"] = "https://discord.gg/".._G.SPRITEHUB_DRIVINGEMPIRE["Discord"]["Invite Code"],
+                                        ["url"] = "https://discord.gg/".._G.SPRITEHUB_BLOXFRUITS["Discord"]["Invite Code"],
                                         ["fields"] = {
                                             {
                                                 ["name"] = "Level",
