@@ -10,16 +10,16 @@ if game.gameId == 1202096104 then
             local RAMAccount = loadstring(game:HttpGet "https://raw.githubusercontent.com/ic3w0lf22/Roblox-Account-Manager/master/RAMAccount.lua")()
             local MyAccount = RAMAccount.new(game:GetService "Players".LocalPlayer.Name)
             local Script_Version = "1.0.7"
-            local Webhook_Api = "https://discord.com/api/webhooks/".."1073750843066695720/QRz9cTl3lp6n2uogThVCZl3jHeG8U01eggsByEjftXwZDtCNV9pIwuiPe9WVKmwi-KjE" --Channel Id / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
+            local Webhook_Api = "https://discord.com/api/webhooks/".."1073750843066695720/QRz9cTl3lp6n2uogThVCZl3jHeG8U01eggsByEjftXwZDtCNV9pIwuiPe9WVKmwi-KjE" / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
             function Check_Data_Roblox_Account_Manager()
                 name = "Display Name: " .. game.Players.LocalPlayer.DisplayName .. "\n"
-                time = "Last: " .. os.date("!%H:%M", os.time() + 7.05 * 60 * 60)
-                money = "Money: " .. Format_Number(game.Players.LocalPlayer.leaderstats.Cash.Value) .. " / " .. MyAccount:GetAlias() .. "\n"
-                bounty = "Bounty: " .. Format_Number(game.Players.LocalPlayer.leaderstats.Bounty.Value) .. "\n"
-                miles = "Miles: " .. Format_Number(game.Players.LocalPlayer.leaderstats.Miles.Value) .. "\n"
+                time = "Last: " .. os.date("!%H:%M", os.time() + 7 * 60 * 60)
+                money = "Money: " .. Number_Format(game.Players.LocalPlayer.leaderstats.Cash.Value) .. " / " .. MyAccount:GetAlias() .. "\n"
+                bounty = "Bounty: " .. Number_Format(game.Players.LocalPlayer.leaderstats.Bounty.Value) .. "\n"
+                miles = "Miles: " .. Number_Format(game.Players.LocalPlayer.leaderstats.Miles.Value) .. "\n"
             end
             
-            function Format_Number(value)
+            function Number_Format(value)
                 local abbreviations = {"", "K", "M"}
                 local ex = math.floor(math.log(math.max(1, math.abs(value)), 1000))
                 local abbrevs = abbreviations[1 + ex] or ("e+" .. ex)
@@ -27,7 +27,7 @@ if game.gameId == 1202096104 then
                 return ("%." .. 1 .. "f%s"):format(normal, abbrevs)
             end
             
-            function Comma_Number(value)
+            function Number_Comma(value)
                 local formatted = value
                 while true do  
                     formatted, k = string.gsub(formatted, "^(-?%d+)(%d%d%d)", '%1,%2')
@@ -85,7 +85,7 @@ if game.gameId == 1202096104 then
             end
             
 
-
+ --Channel Id
 
             --------------------------------------------------------------------------------------------
             ----------------------------------------- SETTINGS -----------------------------------------
@@ -103,8 +103,8 @@ if game.gameId == 1202096104 then
                     },
                     ["WebHook"] = {--การแจ้งเตือนผ่าน Discord | Discord Webhook Notification
                         ["Enable"] = true, --เปิดใช้งานหรือไม่ true = เปิด / false = ปิด | Enable? true or false
-                        ["Link"] = "https://discord.com/api/webhooks/" .. "1073758441962745926/nUftI-qb4yexciN3zVoAyhKMyG-BbNPg0DvCOTG_v12IDYOZ9slx29p4lFp9gR2W5dem" --ลิงค์ Webhook | Link Webhook --Channel Id / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
-                        --["Link"] = "123456789/xxxxxxx" --Channel Id / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
+                        ["Link"] = "https://discord.com/api/webhooks/" .. "1080356587253792840/hVHN_qZ2_SJtg_f_xxRYWqI9gMcPGPVRzAAAlxJ5dMmlGvnFNW1qn-9HRdLOKj7_Z2Wy" --ลิงค์ Webhook | Link Webhook / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
+                        --["Link"] = "123456789/xxxxxxx" / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
                     }
                 }
             end
@@ -117,7 +117,7 @@ if game.gameId == 1202096104 then
             if _G.SPRITEHUB_DRIVINGEMPIRE["Discord"]["Enable"] then
                 setclipboard("discord.gg/".._G.SPRITEHUB_DRIVINGEMPIRE["Discord"]["Invite Code"])
 
-                local Inviter = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Discord%20Inviter/Source.lua%22"))()
+                local Inviter = loadstring(game:HttpGet("https://raw.githubusercontent.com/HyPerKung999/Roblox/main/Other/Roblox%20-%20Discord%20Invite.lua"))()
 
                 Inviter.Prompt({
                     name = "SPRITE HUB",
@@ -129,7 +129,7 @@ if game.gameId == 1202096104 then
             
             spawn(function()
                 setclipboard("discord.gg/".._G.SPRITEHUB_DRIVINGEMPIRE["Discord"]["Invite Code"])
-                RB_NOTIFICATION("SPRITEHUB - DRIVING EMPIRE", "welcome! " .. game.Players.LocalPlayer.DisplayName .. "\n(" .. CHECK_IP() .. ")", 10)
+                RB_NOTIFICATION("SPRITEHUB - DRIVING EMPIRE", "Welcome! " .. game.Players.LocalPlayer.DisplayName .. "\n(" .. CHECK_IP() .. ")", 10)
                 RB_NOTIFICATION("SPRITEHUB - DRIVING EMPIRE", "Discord: discord.gg/".._G.SPRITEHUB_DRIVINGEMPIRE["Discord"]["Invite Code"], 10)
                 
                 local Http_Webhook_Api
@@ -185,17 +185,17 @@ if game.gameId == 1202096104 then
                                     },
                                     {
                                         ["name"] = "Money",
-                                        ["value"] = Format_Number(game.Players.LocalPlayer.leaderstats.Cash.Value),
+                                        ["value"] = Number_Format(game.Players.LocalPlayer.leaderstats.Cash.Value),
                                         ['inline'] = false
                                     },
                                     {
                                         ["name"] = "Bounty",
-                                        ["value"] = Format_Number(game.Players.LocalPlayer.leaderstats.Bounty.Value),
+                                        ["value"] = Number_Format(game.Players.LocalPlayer.leaderstats.Bounty.Value),
                                         ['inline'] = false
                                     },
                                     {
                                         ["name"] = "Miles",
-                                        ["value"] = Format_Number(game.Players.LocalPlayer.leaderstats.Miles.Value),
+                                        ["value"] = Number_Format(game.Players.LocalPlayer.leaderstats.Miles.Value),
                                         ['inline'] = true
                                     },
                                     {
@@ -296,32 +296,37 @@ if game.gameId == 1202096104 then
                                         ["fields"] = {
                                             {
                                                 ["name"] = "Money",
-                                                ["value"] = Format_Number(game.Players.LocalPlayer.leaderstats.Cash.Value),
+                                                ["value"] = Number_Format(game.Players.LocalPlayer.leaderstats.Cash.Value),
                                                 ['inline'] = true
                                             },
                                             {
                                                 ["name"] = "Bounty",
-                                                ["value"] = Format_Number(game.Players.LocalPlayer.leaderstats.Bounty.Value),
+                                                ["value"] = Number_Format(game.Players.LocalPlayer.leaderstats.Bounty.Value),
                                                 ['inline'] = true
                                             },
                                             {
                                                 ["name"] = "Bounty",
-                                                ["value"] = Format_Number(game.Players.LocalPlayer.leaderstats.Miles.Value),
+                                                ["value"] = Number_Format(game.Players.LocalPlayer.leaderstats.Miles.Value),
                                                 ['inline'] = true
+                                            },
+                                            {
+                                                ["name"] = "━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+                                                ["value"] = "",
+                                                ['inline'] = false
                                             },
                                             {
                                                 ["name"] = "Money",
-                                                ["value"] = Comma_Number(game.Players.LocalPlayer.leaderstats.Cash.Value),
+                                                ["value"] = Number_Comma(game.Players.LocalPlayer.leaderstats.Cash.Value),
                                                 ['inline'] = true
                                             },
                                             {
                                                 ["name"] = "Bounty",
-                                                ["value"] = Comma_Number(game.Players.LocalPlayer.leaderstats.Bounty.Value),
+                                                ["value"] = Number_Comma(game.Players.LocalPlayer.leaderstats.Bounty.Value),
                                                 ['inline'] = true
                                             },
                                             {
                                                 ["name"] = "Bounty",
-                                                ["value"] = Comma_Number(game.Players.LocalPlayer.leaderstats.Miles.Value),
+                                                ["value"] = Number_Comma(game.Players.LocalPlayer.leaderstats.Miles.Value),
                                                 ['inline'] = true
                                             },
                                             {
