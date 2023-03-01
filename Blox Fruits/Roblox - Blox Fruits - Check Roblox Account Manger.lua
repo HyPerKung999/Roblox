@@ -10,7 +10,7 @@ if game.gameId == 994732206 then
             local RAMAccount = loadstring(game:HttpGet "https://raw.githubusercontent.com/ic3w0lf22/Roblox-Account-Manager/master/RAMAccount.lua")()
             local MyAccount = RAMAccount.new(game:GetService "Players".LocalPlayer.Name)
             local Script_Version = "1.0.0"
-            local Webhook_Api = "https://discord.com/api/webhooks/" .. "1073750843066695720/QRz9cTl3lp6n2uogThVCZl3jHeG8U01eggsByEjftXwZDtCNV9pIwuiPe9WVKmwi-KjE" -- Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
+            local Webhook_Api = "https://discord.com/api/webhooks/" .. "1073750843066695720/QRz9cTl3lp6n2uogThVCZl3jHeG8U01eggsByEjftXwZDtCNV9pIwuiPe9WVKmwi-KjE" --Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
             local placeId = game.PlaceId;
             local awake = {}
             local awake_list = ""
@@ -25,7 +25,7 @@ if game.gameId == 994732206 then
             
             function Check_Data_Roblox_Account_Manager()
                 name = "Display Name: " .. game.Players.LocalPlayer.DisplayName .. "\n"
-                time = "Last: " .. os.date("!%H:%M", os.time() + 7 * 60 * 60)
+                time = "Last: " .. os.date("!%H:%M", os.time() + 7 * 60 * 60) .. "\n"
                 world = "World: " .. world_check .. "\n"
                 level = "Level: " .. Number_Format(game.Players.LocalPlayer.Data.Level.Value) .. "\n"
                 beli = "Beli: " .. Number_Format(game.Players.LocalPlayer.Data.Beli.Value) .. "\n"
@@ -33,7 +33,7 @@ if game.gameId == 994732206 then
                 devilFruit = "Devil Fruit: " .. game.Players.LocalPlayer.Data.DevilFruit.Value .. "\n"
                 awaked = "Awake: " .. Check_Awake_Fruits() .. "\n"
                 race = "Race: " .. game.Players.LocalPlayer.Data.Race.Value .. "\n"
-                lastspawnpoint = "Last Spawn Point: " .. game.Players.LocalPlayer.Data.LastSpawnPoint.Value .. "\n"
+                lastspawnpoint = "Last Spawn Point: " .. game.Players.LocalPlayer.Data.LastSpawnPoint.Value
             end
             
             function Check_Awake_Fruits()

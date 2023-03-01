@@ -10,13 +10,13 @@ if game.gameId == 1202096104 then
             local RAMAccount = loadstring(game:HttpGet "https://raw.githubusercontent.com/ic3w0lf22/Roblox-Account-Manager/master/RAMAccount.lua")()
             local MyAccount = RAMAccount.new(game:GetService "Players".LocalPlayer.Name)
             local Script_Version = "1.0.7"
-            local Webhook_Api = "https://discord.com/api/webhooks/".."1073750843066695720/QRz9cTl3lp6n2uogThVCZl3jHeG8U01eggsByEjftXwZDtCNV9pIwuiPe9WVKmwi-KjE" / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
+            local Webhook_Api = "https://discord.com/api/webhooks/" .. "1073750843066695720/QRz9cTl3lp6n2uogThVCZl3jHeG8U01eggsByEjftXwZDtCNV9pIwuiPe9WVKmwi-KjE" --Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
             function Check_Data_Roblox_Account_Manager()
                 name = "Display Name: " .. game.Players.LocalPlayer.DisplayName .. "\n"
-                time = "Last: " .. os.date("!%H:%M", os.time() + 7 * 60 * 60)
+                time = "Last: " .. os.date("!%H:%M", os.time() + 7 * 60 * 60) .. "\n"
                 money = "Money: " .. Number_Format(game.Players.LocalPlayer.leaderstats.Cash.Value) .. " / " .. MyAccount:GetAlias() .. "\n"
                 bounty = "Bounty: " .. Number_Format(game.Players.LocalPlayer.leaderstats.Bounty.Value) .. "\n"
-                miles = "Miles: " .. Number_Format(game.Players.LocalPlayer.leaderstats.Miles.Value) .. "\n"
+                miles = "Miles: " .. Number_Format(game.Players.LocalPlayer.leaderstats.Miles.Value)
             end
             
             function Number_Format(value)
@@ -29,9 +29,9 @@ if game.gameId == 1202096104 then
             
             function Number_Comma(value)
                 local formatted = value
-                while true do  
+                while true do
                     formatted, k = string.gsub(formatted, "^(-?%d+)(%d%d%d)", '%1,%2')
-                    if (k==0) then
+                    if (k == 0) then
                         break
                     end
                 end
@@ -84,9 +84,8 @@ if game.gameId == 1202096104 then
                 })
             end
             
-
- --Channel Id
-
+            
+            --Channel Id
             --------------------------------------------------------------------------------------------
             ----------------------------------------- SETTINGS -----------------------------------------
             --------------------------------------------------------------------------------------------
@@ -94,7 +93,7 @@ if game.gameId == 1202096104 then
             if not _G.SPRITEHUB_DRIVINGEMPIRE then
                 _G.SPRITEHUB_DRIVINGEMPIRE = {
                     ["Discord"] = {
-                        ["Enable"] = true,--เข้า Discord อัตโนมัติ | Auto Join Discord
+                        ["Enable"] = true, --เข้า Discord อัตโนมัติ | Auto Join Discord
                         ["Invite Code"] = "dA5TzZysQp" --โค้ดคำเชิญ | Invite Code Discord
                     },
                     ["Roblox Account Manager"] = {--การตั้ง Description ในโปรแกรม Roblox Account Manager | Set Description in Roblox Account Manager
@@ -105,7 +104,7 @@ if game.gameId == 1202096104 then
                     ["Webhook"] = {--การแจ้งเตือนผ่าน Discord | Discord Webhook Notification
                         ["Enable"] = true, --เปิดใช้งานหรือไม่ true = เปิด / false = ปิด | Enable? true or false
                         ["Link"] = "https://discord.com/api/webhooks/" .. "1080356587253792840/hVHN_qZ2_SJtg_f_xxRYWqI9gMcPGPVRzAAAlxJ5dMmlGvnFNW1qn-9HRdLOKj7_Z2Wy" --ลิงค์ Webhook | Link Webhook / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
-                        --["Link"] = "123456789/xxxxxxx" / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
+                    --["Link"] = "123456789/xxxxxxx" / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
                     }
                 }
             end
@@ -116,10 +115,10 @@ if game.gameId == 1202096104 then
             end
             
             if _G.SPRITEHUB_DRIVINGEMPIRE["Discord"]["Enable"] then
-                setclipboard("discord.gg/"..Invite_Code)
-
+                setclipboard("discord.gg/" .. Invite_Code)
+                
                 local Inviter = loadstring(game:HttpGet("https://raw.githubusercontent.com/HyPerKung999/Roblox/main/Other/Roblox%20-%20Discord%20Invite.lua"))()
-
+                
                 Inviter.Prompt({
                     name = "SPRITE HUB",
                     invite = "dA5TzZysQp",
@@ -129,9 +128,9 @@ if game.gameId == 1202096104 then
             end
             
             spawn(function()
-                setclipboard("discord.gg/"..Invite_Code)
+                setclipboard("discord.gg/" .. Invite_Code)
                 RB_NOTIFICATION("SPRITEHUB - DRIVING EMPIRE", "Welcome! " .. game.Players.LocalPlayer.DisplayName .. "\n(" .. CHECK_IP() .. ")", 10)
-                RB_NOTIFICATION("SPRITEHUB - DRIVING EMPIRE", "Discord: discord.gg/"..Invite_Code, 10)
+                RB_NOTIFICATION("SPRITEHUB - DRIVING EMPIRE", "Discord: discord.gg/" .. Invite_Code, 10)
                 
                 local Http_Webhook_Api
                 if syn then
@@ -151,13 +150,13 @@ if game.gameId == 1202096104 then
                             {
                                 ["author"] = {
                                     ["name"] = "SPRITE HUB [By.SPRITEDEV (HyPer Kung)]",
-                                    ["url"] = "https://discord.gg/"..Invite_Code,
+                                    ["url"] = "https://discord.gg/" .. Invite_Code,
                                     ["icon_url"] = "https://cdn.discordapp.com/attachments/1073316659848294503/1073665120716202085/SPRITE_DEV_JPG.png"
                                 },
                                 ["color"] = tonumber(0xffffff),
                                 ["title"] = "SPRITE HUB : DRIVING EMPIRE",
                                 ["description"] = "```" .. "\n" .. "Game: " .. CHECK_GAME_NAME() .. "\n" .. "Script Version: " .. Script_Version .. "\n" .. "Ip: " .. CHECK_IP() .. "\n" .. "Hwid: " .. CHECK_HWID() .. "```",
-                                ["url"] = "https://discord.gg/"..Invite_Code,
+                                ["url"] = "https://discord.gg/" .. Invite_Code,
                                 ["fields"] = {
                                     {
                                         ["name"] = "━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
@@ -287,13 +286,13 @@ if game.gameId == 1202096104 then
                                     {
                                         ["author"] = {
                                             ["name"] = "SPRITE HUB [By.SPRITEDEV (HyPer Kung)]",
-                                            ["url"] = "https://discord.gg/"..Invite_Code,
+                                            ["url"] = "https://discord.gg/" .. Invite_Code,
                                             ["icon_url"] = "https://cdn.discordapp.com/attachments/1073316659848294503/1073665120716202085/SPRITE_DEV_JPG.png"
                                         },
                                         ["color"] = tonumber(0xffffff),
                                         ["title"] = "SPRITE HUB : DRIVING EMPIRE",
                                         ["description"] = "```" .. "Name: " .. game.Players.LocalPlayer.Name .. "\n" .. "Nick Name: " .. game.Players.LocalPlayer.DisplayName .. "\n" .. "```",
-                                        ["url"] = "https://discord.gg/"..Invite_Code,
+                                        ["url"] = "https://discord.gg/" .. Invite_Code,
                                         ["fields"] = {
                                             {
                                                 ["name"] = "Money",
