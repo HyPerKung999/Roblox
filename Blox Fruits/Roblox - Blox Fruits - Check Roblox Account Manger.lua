@@ -9,14 +9,14 @@ if game.gameId == 1202096104 then
         pcall(function()
             local RAMAccount = loadstring(game:HttpGet "https://raw.githubusercontent.com/ic3w0lf22/Roblox-Account-Manager/master/RAMAccount.lua")()
             local MyAccount = RAMAccount.new(game:GetService "Players".LocalPlayer.Name)
-            local Script_Version = "1.0.6"
+            local Script_Version = "1.0.0"
             local Webhook_Api = "https://discord.com/api/webhooks/".."1073750843066695720/QRz9cTl3lp6n2uogThVCZl3jHeG8U01eggsByEjftXwZDtCNV9pIwuiPe9WVKmwi-KjE" --Channel Id / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
             function Check_Data_Roblox_Account_Manager()
-                name = "Display Name: " .. game.Players.LocalPlayer.DisplayName .. "\n"
-                time = "Last: " .. os.date("!%H:%M", os.time() + 7.05 * 60 * 60)
+                name = "Name: " .. game.Players.LocalPlayer.DisplayName .. "\n"
                 money = "Money: " .. Format_Number(game.Players.LocalPlayer.leaderstats.Cash.Value) .. " / " .. MyAccount:GetAlias() .. "\n"
                 bounty = "Bounty: " .. Format_Number(game.Players.LocalPlayer.leaderstats.Bounty.Value) .. "\n"
                 miles = "Miles: " .. Format_Number(game.Players.LocalPlayer.leaderstats.Miles.Value) .. "\n"
+                time = "Last: " .. os.date("!%H:%M", os.time() + 7.05 * 60 * 60)
             end
             
             function Format_Number(value)
@@ -101,7 +101,7 @@ if game.gameId == 1202096104 then
                     ["WebHook"] = {--การแจ้งเตือนผ่าน Discord | Discord Webhook Notification
                         ["Enable"] = true, --เปิดใช้งานหรือไม่ true = เปิด / false = ปิด | Enable? true or false
                         ["Link"] = "https://discord.com/api/webhooks/" .. "1073758441962745926/nUftI-qb4yexciN3zVoAyhKMyG-BbNPg0DvCOTG_v12IDYOZ9slx29p4lFp9gR2W5dem" --ลิงค์ Webhook | Link Webhook --Channel Id / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
-                        --["Link"] = "123456789/xxxxxxx" --Channel Id / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
+                    --["Link"] = "123456789/xxxxxxx" --Channel Id / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
                     }
                 }
             end
