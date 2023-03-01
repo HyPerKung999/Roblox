@@ -11,18 +11,52 @@ if game.gameId == 994732206 then
             local MyAccount = RAMAccount.new(game:GetService "Players".LocalPlayer.Name)
             local Script_Version = "1.0.0"
             local Webhook_Api = "https://discord.com/api/webhooks/".."1073750843066695720/QRz9cTl3lp6n2uogThVCZl3jHeG8U01eggsByEjftXwZDtCNV9pIwuiPe9WVKmwi-KjE" / Token Webhook (https://discord.com/api/webhooks/123456789/xxxxxxx)
+            local placeId = game.PlaceId;
+            local awake = {}
+            local awake_list = ""
+            
+            if placeId == 2753915549 then
+                world_check = "1";
+            elseif placeId == 4442272183 then
+                world_check = "2";
+            elseif placeId == 7449423635 then
+                world_check = "3";
+            end
+
             function Check_Data_Roblox_Account_Manager()
                 name = "Display Name: " .. game.Players.LocalPlayer.DisplayName .. "\n"
-                name = "Display Name: " .. game.Players.LocalPlayer.DisplayName .. "\n"
                 time = "Last: " .. os.date("!%H:%M", os.time() + 7 * 60 * 60)
+                world = "World: " .. world_check .. "\n"
                 level = "Level: " .. Number_Format(game.Players.LocalPlayer.Data.Level.Value) .. "\n"
                 beli = "Beli: " .. Number_Format(game.Players.LocalPlayer.Data.Beli.Value) .. "\n"
                 fragments = "Fragments: " .. Number_Format(game.Players.LocalPlayer.Data.Fragments.Value) .. "\n"
                 devilFruit = "Devil Fruit: " .. game.Players.LocalPlayer.Data.DevilFruit.Value .. "\n"
+                awaked = "Awake: "..Check_Awake_Fruits().."\n"
                 race = "Race: " .. game.Players.LocalPlayer.Data.Race.Value .. "\n"
                 lastspawnpoint = "Last Spawn Point: " .. game.Players.LocalPlayer.Data.LastSpawnPoint.Value .. "\n"
             end
             
+            function Check_Awake_Fruits()
+                game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.Visible = true
+                task.wait(1)
+                for i, v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.TopContainer.Frame:GetChildren()) do
+                    if v:IsA('ImageButton') then
+                        if v.Name == 'Template' then
+                            else
+                            table.insert(awake, v.Name)
+                        end
+                    end
+                end
+                awake_list = ""
+                for i, x in pairs(awake) do
+                    awake_list = awake_list .. x .. ", "
+                end
+                spawn(function()
+                    task.wait(1)
+                    game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.Visible = false
+                end)
+                return awake_list
+            end
             function Number_Format(value)
                 local abbreviations = {"", "K", "M"}
                 local ex = math.floor(math.log(math.max(1, math.abs(value)), 1000))
