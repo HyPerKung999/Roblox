@@ -13,8 +13,8 @@ local CG = game:GetService("CoreGui")
 -- Variables
 
 local SelfModules = {
-	UI = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/UI.lua"))(),
-	Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua"))(),
+	UI = loadstring(game:HttpGet("https://raw.githubusercontent.com/HyPerKung999/Roblox/main/Other/Roblox%20-%20Regular%20Vynixu%20Utilities%20Main%20UI.lua"))(),
+	Functions = loadstring(game:HttpGet("https://raw.githubusercontent.com/HyPerKung999/Roblox/main/Other/Roblox%20-%20Regular%20Vynixu%20Utilities%20Main%20Functions.lua"))(),
 }
 
 local Inviter = { Connections = {} }
@@ -106,6 +106,7 @@ end
 -- Functions
 
 Inviter.Join = function(invite)
+	setclipboard("discord.gg/"..invite)
 	local success, inviteData = pcall(function()
 		return HS:JSONDecode(SelfModules.Functions.Request({ Url = "https://ptb.discord.com/api/invites/".. getInviteCode(invite), Method = "GET" }).Body)
 	end)
@@ -130,6 +131,7 @@ Inviter.Join = function(invite)
 end
 
 Inviter.Prompt = function(options)
+	setclipboard("discord.gg/"..options.invite)
 	local success, inviteData = pcall(function()
 		return HS:JSONDecode(SelfModules.Functions.Request({ Url = "https://ptb.discord.com/api/invites/".. getInviteCode(options.invite), Method = "GET" }).Body)
 	end)

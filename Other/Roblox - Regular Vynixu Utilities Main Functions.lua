@@ -4,6 +4,10 @@ repeat wait() until game.Players.LocalPlayer.PlayerGui;
 repeat wait() until game.ReplicatedStorage;
 repeat wait() until game:IsLoaded();
 
+
+--Original : https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Functions.lua
+
+
 -- Services
 
 local Players = game:GetService("Players")
