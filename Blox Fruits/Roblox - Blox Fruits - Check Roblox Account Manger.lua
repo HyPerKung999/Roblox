@@ -4,7 +4,7 @@ repeat wait() until game.Players.LocalPlayer.PlayerGui;
 repeat wait() until game.ReplicatedStorage;
 repeat wait() until game:IsLoaded();
 
-if game.gameId == 1202096104 then
+if game.gameId == 994732206 then
     spawn(function()
         pcall(function()
             local RAMAccount = loadstring(game:HttpGet "https://raw.githubusercontent.com/ic3w0lf22/Roblox-Account-Manager/master/RAMAccount.lua")()
