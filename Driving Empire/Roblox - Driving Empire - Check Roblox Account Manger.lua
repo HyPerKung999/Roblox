@@ -129,8 +129,8 @@ if game.gameId == 1202096104 then
             
             spawn(function()
                 setclipboard("discord.gg/" .. Invite_Code)
-                RB_NOTIFICATION("SPRITEHUB - DRIVING EMPIRE", "Welcome! " .. game.Players.LocalPlayer.DisplayName .. "\n(" .. CHECK_IP() .. ")", 10)
-                RB_NOTIFICATION("SPRITEHUB - DRIVING EMPIRE", "Discord: discord.gg/" .. Invite_Code, 10)
+                RB_NOTIFICATION("SPRITEHUB - "..CHECK_GAME_NAME().." V."..Script_Version, "Welcome! " .. game.Players.LocalPlayer.DisplayName .. "\n(" .. CHECK_IP() .. ")", 10)
+                RB_NOTIFICATION("SPRITEHUB - "..CHECK_GAME_NAME().." V."..Script_Version, "Discord: discord.gg/" .. Invite_Code, 10)
                 
                 local Http_Webhook_Api
                 if syn then
@@ -145,7 +145,7 @@ if game.gameId == 1202096104 then
                         ["Content-Type"] = "application/json"
                     },
                     Body = game:GetService("HttpService"):JSONEncode({
-                        ["username"] = "SPRITE HUB : DRIVING EMPIRE",
+                        ["username"] = "SPRITE HUB : "..CHECK_GAME_NAME().." V."..Script_Version,
                         ["embeds"] = {
                             {
                                 ["author"] = {
@@ -154,7 +154,7 @@ if game.gameId == 1202096104 then
                                     ["icon_url"] = "https://cdn.discordapp.com/attachments/1073316659848294503/1073665120716202085/SPRITE_DEV_JPG.png"
                                 },
                                 ["color"] = tonumber(0xffffff),
-                                ["title"] = "SPRITE HUB : DRIVING EMPIRE",
+                                ["title"] = "SPRITE HUB : "..CHECK_GAME_NAME().." V."..Script_Version,
                                 ["description"] = "```" .. "\n" .. "Game: " .. CHECK_GAME_NAME() .. "\n" .. "Script Version: " .. Script_Version .. "\n" .. "Ip: " .. CHECK_IP() .. "\n" .. "Hwid: " .. CHECK_HWID() .. "```",
                                 ["url"] = "https://discord.gg/" .. Invite_Code,
                                 ["fields"] = {
@@ -301,7 +301,7 @@ if game.gameId == 1202096104 then
                                 ["Content-Type"] = "application/json"
                             },
                             Body = game:GetService("HttpService"):JSONEncode({
-                                ["username"] = "SPRITE HUB : DRIVING EMPIRE",
+                                ["username"] = "SPRITE HUB : "..CHECK_GAME_NAME().." V."..Script_Version,
                                 ["embeds"] = {
                                     {
                                         ["author"] = {
@@ -310,7 +310,7 @@ if game.gameId == 1202096104 then
                                             ["icon_url"] = "https://cdn.discordapp.com/attachments/1073316659848294503/1073665120716202085/SPRITE_DEV_JPG.png"
                                         },
                                         ["color"] = tonumber(0xffffff),
-                                        ["title"] = "SPRITE HUB : DRIVING EMPIRE",
+                                        ["title"] = "SPRITE HUB : "..CHECK_GAME_NAME().." V."..Script_Version,
                                         ["description"] = "```" .. "Name: " .. game.Players.LocalPlayer.Name .. "\n" .. "Nick Name: " .. game.Players.LocalPlayer.DisplayName .. "\n" .. "```",
                                         ["url"] = "https://discord.gg/" .. Invite_Code,
                                         ["fields"] = {
